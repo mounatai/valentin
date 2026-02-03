@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>¿Quieres ser mi Valentín?</title>
+
+<style>
+
+  body {
+
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+
+    padding: 50px;
+
+    background: #ffe6e6;
+
+  }
+
+  h1 {
+
+    color: #e60073;
+
+  }
+
+  .button {
+
+    padding: 15px 30px;
+
+    font-size: 20px;
+
+    margin: 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+  }
+
+  #yes {
+
+    background-color: #ff4d4d;
+
+    color: white;
+
+  }
+
+  #no {
+
+    background-color: #999;
+
+    color: white;
+
+    position: absolute;
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+
+
+
+<h1>💖 ¿Quieres ser mi Valentín? 💖</h1>
+
+
+
+
+<button id="yes" class="button">Sí</button>
+
+<button id="no" class="button">No</button>
+
+
+
+
+<script>
+
+const noButton = document.getElementById('no');
+
+const body = document.body;
+
+
+
+
+// Movimiento del botón "No"
+
+noButton.addEventListener('mouseover', () => {
+
+    const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+
+    const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+
+    noButton.style.left = x + 'px';
+
+    noButton.style.top = y + 'px';
+
+});
+
+
+
+
+// Acción del botón "Sí"
+
+document.getElementById('yes').addEventListener('click', () => {
+
+    alert('¡Me haces muy feliz! 💖 Feliz San Valentín 💖');
+
+});
+
+</script>
+
+
+
+
+</body>
+
+</html>
+
