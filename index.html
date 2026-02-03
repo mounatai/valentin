@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Quieres ser mi Valentín?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      background-color: #ff3366;
+      color: white;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #no {
+      background-color: #cccccc;
+      color: #333;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💖 Willst du mein Valentinstag sein? 💖</h1>
+
+  <button id="yes">Ja (Die Frage beleidigt mich) 💘</button>
+  <button id="no">Nein (Ich habe ein Date mit Jenny...)</button>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    noBtn.addEventListener("mouseenter", () => {
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = window.innerHeight - noBtn.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+  
+	   // Acción al hacer click en Sí
+    document.getElementById("yes").addEventListener("click", () => {
+      document.body.innerHTML = `
+        <h1 style="color:white; text-align:center;">
+          ♥️ Super, ich reserviere schon mal Schokolade und Kuschelzeit! 😘
+        </h1>
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2JmcGIxeDB2NjZhdXZzMDF2dmQ3a3JlbjRvMWdmcnpib255dTh3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mqj99xSFwgQYXv24r4/giphy.gif" alt="GIF romántico">
+      `;
+    });
+	   // Al hacer click en NO
+    noBtn.addEventListener("click", () => {
+      document.body.innerHTML = `
+        <h1 style="color:white; text-align:center;">🙈 are you sure?...</h1>
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDJmbDEzdDh2M2NsNml3Yzhjc3Y2eW1wbGp1MWpxeTcyNDB1NG9zbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kbVxgaRtI1Go2viJGx/giphy.gif" alt="gif divertido">
+      `;
+    });
+  </script>
+</body>
+</html>
