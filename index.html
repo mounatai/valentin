@@ -1,128 +1,75 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
+  <meta charset="UTF-8">
+  <title>¿Quieres ser mi Valentín?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
 
-<meta charset="UTF-8">
+    h1 {
+      color: white;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      text-align: center;
+    }
 
-<title>¿Quieres ser mi Valentín?</title>
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      position: absolute;
+    }
 
-<style>
+    #yes {
+      background-color: #ff3366;
+      color: white;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-  body {
-
-    font-family: Arial, sans-serif;
-
-    text-align: center;
-
-    padding: 50px;
-
-    background: #ffe6e6;
-
-  }
-
-  h1 {
-
-    color: #e60073;
-
-  }
-
-  .button {
-
-    padding: 15px 30px;
-
-    font-size: 20px;
-
-    margin: 20px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-
-  }
-
-  #yes {
-
-    background-color: #ff4d4d;
-
-    color: white;
-
-  }
-
-  #no {
-
-    background-color: #999;
-
-    color: white;
-
-    position: absolute;
-
-  }
-
-</style>
-
+    #no {
+      background-color: #cccccc;
+      color: #333;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
 </head>
-
 <body>
 
+  <h1>💖 ¿Quieres ser mi Valentín? 💖</h1>
 
+  <button id="yes">Sí 💘</button>
+  <button id="no">No 🙈</button>
 
+  <script>
+    const noBtn = document.getElementById("no");
 
-<h1>💖 ¿Quieres ser mi Valentín? 💖</h1>
+    noBtn.addEventListener("mouseenter", () => {
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = window.innerHeight - noBtn.offsetHeight;
 
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
 
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
 
-
-<button id="yes" class="button">Sí</button>
-
-<button id="no" class="button">No</button>
-
-
-
-
-<script>
-
-const noButton = document.getElementById('no');
-
-const body = document.body;
-
-
-
-
-// Movimiento del botón "No"
-
-noButton.addEventListener('mouseover', () => {
-
-    const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
-
-    const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
-
-    noButton.style.left = x + 'px';
-
-    noButton.style.top = y + 'px';
-
-});
-
-
-
-
-// Acción del botón "Sí"
-
-document.getElementById('yes').addEventListener('click', () => {
-
-    alert('¡Me haces muy feliz! 💖 Feliz San Valentín 💖');
-
-});
-
-</script>
-
-
-
-
-</body>
-
-</html>
-
+    document.getElementById("yes").addEventListener("click", () => {
+      document.body.innerHTML = `
+        <h1 style="color:white; text-ali
